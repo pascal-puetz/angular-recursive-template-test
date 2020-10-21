@@ -7,4 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class TextComponent {
   @Input() public text:string;
+  @Input() public allowHTML:boolean = false;
 }

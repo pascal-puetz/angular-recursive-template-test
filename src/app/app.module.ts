@@ -8,6 +8,7 @@ import { TextComponent } from './components/panel-line/text/text.component';
 import { ListComponent } from './components/panel-line/list/list.component';
 import { StrongComponent } from './components/panel-line/strong/strong.component';
 import { ParagraphComponent } from './components/panel-line/paragraph/paragraph.component';
+import { MapStringsToTextEntryPipe } from './pipes/map-strings-to-text-entry.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ParagraphComponent } from './components/panel-line/paragraph/paragraph.
     TextComponent,
     ListComponent,
     StrongComponent,
-    ParagraphComponent
+    ParagraphComponent,
+    MapStringsToTextEntryPipe
   ],
   imports: [
     BrowserModule,

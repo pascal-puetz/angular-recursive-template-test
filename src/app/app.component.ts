@@ -11,13 +11,13 @@ export class AppComponent {
     {
       type: 'paragraph',
       children: [
-        { type: "text", text: 'Some first paragraph text' },
-        { type: "strong", text: 'with a bold' },
+        { type: "text", text: 'Some first paragraph text ' },
+        { type: "strong", text: 'with a bold ' },
         { type: 'text', text: 'part.' },
       ]
     },
-    { type: "text", text: 'Not' },
-    { type: "strong", text: 'in' },
+    { type: "text", text: 'Not ' },
+    { type: "strong", text: 'in ' },
     { type: 'text', text: 'paragraph.' },
     {
       type: "list",
@@ -26,8 +26,8 @@ export class AppComponent {
         {
           type: 'list-entry',
           children: [
-            { type: 'text', text: 'Some' },
-            { type: 'strong', text: 'complex' },
+            { type: 'text', text: 'Some ' },
+            { type: 'strong', text: 'complex ' },
             { type: 'text', text: 'entry' },
           ]
         },
@@ -35,6 +35,7 @@ export class AppComponent {
       ]
     }
   ];
+
 
   public pLineConfig2:Array<PanelLineConfiguration> = [
     { type: "text", text: 'Some first paragraph text' },
@@ -76,7 +77,7 @@ export class AppComponent {
         { type: "text", text: 'Another simple entry'},
       ]
     },
-    { type: "strong", text: 'with a bold' },
+    { type: "strong", text: 'This is bold' },
     {
       type: "list",
       children: [
@@ -98,5 +99,49 @@ export class AppComponent {
     { type: "strong", text: 'with a bold' },
     { type: "text", text: 'Some first paragraph text' },
     { type: "strong", text: 'with a bold' },
+  ];
+
+
+  public pLineConfigWithStrings:Array<PanelLineConfiguration> = [
+    'This panel line uses a less verbose syntax',
+    {
+      type: "list",
+      children: [
+        'This is only a string, not a specific type',
+        {
+          type: 'list-entry',
+          children: ['This is as well', { type: 'strong', text: '(with this inserted)' }, '- and it works!' ]
+        }
+      ]
+    },
+    {
+      type: 'paragraph',
+      children: [
+        'Just to get another paragraph in...',
+        { type: "strong", text: 'obviously' },
+        'with a',
+        { type: "strong", text: 'bold' },
+        'text in it'
+      ]
+    },
+  ];
+
+
+  public pLineWithHTML:Array<PanelLineConfiguration> = [
+    'This panel line uses a less verbose syntax (and HTML!)',
+    {
+      type: "list",
+      children: [
+        'This is only a string, not a specific type',
+        'This is as well <b>(with this inserted)</b> - and it works!',
+        '<b><i>Just to flex...</i></b>'
+      ]
+    },
+    {
+      type: 'paragraph',
+      children: [
+        'Just to get another paragraph in... <b>obviously</b> with a <b>bold</b> and a <i>cursive</i> text in it'
+      ]
+    },
   ];
 }

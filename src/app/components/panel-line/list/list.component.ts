@@ -1,5 +1,5 @@
 import {Component, Input, TemplateRef} from '@angular/core';
-import {PanelLineConfigListEntry, PanelLineConfiguration} from "../panel-line.component";
+import {PanelLineConfigListEntry, StrictPanelLineConfiguration} from "../panel-line.component";
 
 @Component({
   selector: 'app-list',
@@ -8,7 +8,7 @@ import {PanelLineConfigListEntry, PanelLineConfiguration} from "../panel-line.co
 })
 export class ListComponent {
   @Input() public recursiveTemplate:TemplateRef<unknown>;
-  @Input('configuration') public set unmappedConfig(configuration: Array<PanelLineConfiguration | PanelLineConfigListEntry>) {
+  @Input('configuration') public set unmappedConfig(configuration: Array<StrictPanelLineConfiguration | PanelLineConfigListEntry>) {
     this.configuration = configuration.map(config =>
       config.type === 'list-entry'
         ? config

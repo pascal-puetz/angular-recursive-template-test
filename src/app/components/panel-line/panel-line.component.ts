@@ -7,10 +7,11 @@ import {Component, Input} from '@angular/core';
 })
 export class PanelLineComponent {
   @Input() public configuration:Array<PanelLineConfiguration> = [];
+  @Input() public allowHTMLTexts:boolean = false;
 }
 
-
-export type PanelLineConfiguration = PanelLineConfigText | PanelLineConfigStrong | PanelLineConfigParagraph | PanelLineConfigList;
+export type StrictPanelLineConfiguration = PanelLineConfigText | PanelLineConfigStrong | PanelLineConfigParagraph | PanelLineConfigList;
+export type PanelLineConfiguration = StrictPanelLineConfiguration | string;
 
 export interface PanelLineConfigText {
   type: 'text';

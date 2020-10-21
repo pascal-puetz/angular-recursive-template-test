@@ -1,4 +1,5 @@
 import {Component, Input, TemplateRef} from '@angular/core';
+import {StrictPanelLineConfiguration} from "../panel-line.component";
 
 @Component({
   selector: 'app-paragraph',
@@ -7,5 +8,5 @@ import {Component, Input, TemplateRef} from '@angular/core';
 })
 export class ParagraphComponent {
   @Input() public template:TemplateRef<unknown>;
-  @Input() public context:unknown;
+  @Input() public configuration:Array<StrictPanelLineConfiguration>;
 }
