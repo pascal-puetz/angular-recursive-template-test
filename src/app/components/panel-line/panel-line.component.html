@@ -1,0 +1,11 @@
+<ng-container *ngTemplateOutlet="recursiveTemplate; context: {list: configuration}"></ng-container>
+
+<ng-template #recursiveTemplate let-list="list">
+  <ng-container *ngFor="let entry of list" [ngSwitch]="entry.type">
+    <app-text *ngSwitchCase="'text'" [text]="entry.text"></app-text>
+    <app-strong *ngSwitchCase="'strong'" [text]="entry.text"></app-strong>
+    <app-paragraph *ngSwitchCase="'paragraph'" [template]="recursiveTemplate" [context]="{list: entry.children}"></app-paragraph>
+    <app-list *ngSwitchCase="'list'" [configuration]="entry.children" [recursiveTemplate]="recursiveTemplate"></app-list>
+  </ng-container>
+</ng-template>
+

@@ -1,0 +1,10 @@
+<ng-container *ngTemplateOutlet="listTemplate; context: {list: configuration};"></ng-container>
+
+<ng-template #listTemplate let-list="list">
+  <ul>
+    <li *ngFor="let entry of list">
+      <ng-container *ngTemplateOutlet="recursiveTemplate; context: {list: entry.children}"></ng-container>
+    </li>
+  </ul>
+</ng-template>
+
